@@ -18,9 +18,9 @@ const Liberay = async () => {
 
   return (
     <div className="min-h-screen bg-[#090a0c] px-4 py-6">
-      {/* Library Container */}
+      
       <div className="container mx-auto w-full max-w-[1240px]">
-        {/* Heading */}
+        
         <div className="mb-5">
           <h1 className="text-[30px] font-extrabold uppercase leading-none tracking-tight text-white">
             THE LIBRARY

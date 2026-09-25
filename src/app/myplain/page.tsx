@@ -150,7 +150,7 @@
 //             : ""
 //         }`}
 //       >
-//         <div className="flex flex-col gap-4 px-3.5 py-3 sm:flex-row sm:items-center">
+//         <div className="  flex flex-col gap-4 px-3.5 py-3 sm:flex-row sm:items-center">
 //           <div className="h-[90px] w-full shrink-0 overflow-hidden rounded-[7px] sm:w-[132px]">
 //             <Image
 //               src={gym.image}
@@ -223,7 +223,7 @@
 //   };
 //   return (
 //     <div className="min-h-screen bg-[#090a0c] px-3 pb-0 pt-8 sm:px-6">
-//       <div className="mx-auto w-full max-w-[1030px]">
+//       <div className="mx-auto w-full max-w-[1200px]">
 //         <div className="pb-5">
 
 //           <h1 className="text-[25px] font-black uppercase leading-none tracking-[-0.02em] text-white sm:text-[27px]">

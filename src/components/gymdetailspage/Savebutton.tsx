@@ -37,7 +37,7 @@
 //     <button
 //       type="button"
 //       onClick={handleAddSave}
-//       className="flex cursor-pointer items-center gap-2 rounded-[6px] border border-[#30333a] bg-transparent px-3.5 py-2 text-[8px] font-medium text-white transition hover:bg-[#15171c]"
+//       className="flex cursor-pointer items-center gap-2 rounded-[6px] border border-[#30333a] bg-transparent px-3.5 py-2 text-[12px] font-medium text-white transition hover:bg-[#646568]"
 //     >
 //       <FiBookmark className="shrink-0 text-[14px]" />
 

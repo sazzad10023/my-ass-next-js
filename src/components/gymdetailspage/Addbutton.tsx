@@ -35,9 +35,8 @@
 
 //   return (
 //     <button
-//       type="button"
 //       onClick={handleGym}
-//       className="flex cursor-pointer items-center gap-2 rounded-[6px] bg-[#c8ff00] px-3.5 py-2 text-[8px] font-bold text-[#090a0c] transition hover:bg-[#b8ee00]"
+//       className="flex cursor-pointer items-center gap-2 rounded-[6px] bg-[#c8ff00] px-3.5 py-2 text-[12px] font-bold text-[#090a0c] transition hover:bg-[#7a7c74]"
 //     >
 //       <PiCalendarPlusLight className="shrink-0 text-[14px]" />
 

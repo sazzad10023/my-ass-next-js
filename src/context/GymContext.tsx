@@ -1,22 +1,22 @@
-// "use client";
-// import { createContext, ReactNode, useState}from 'react';
+"use client";
+import { createContext, ReactNode, useState}from 'react';
 
-//  export const GymContext= createContext( {} );
+ export const GymContext= createContext( {} );
 
 
-// const GymProvider = ({ children }: { children: ReactNode }) => {
-//     const [addPlain, setaddPlain] = useState([]);
-//     const [saveGym, setsaveGym] = useState([]);
-//     const sharedata = {
-//     addPlain,
-//     setaddPlain,
-//     saveGym,
-//     setsaveGym
-// }
+const GymProvider = ({ children }: { children: ReactNode }) => {
+    const [addPlain, setaddPlain] = useState([]);
+    const [saveGym, setsaveGym] = useState([]);
+    const sharedata = {
+    addPlain,
+    setaddPlain,
+    saveGym,
+    setsaveGym
+}
 
-//     return (
-//         <GymContext.Provider value ={sharedata}>{children}</GymContext.Provider>
-//     );
-// };
+    return (
+        <GymContext.Provider value ={sharedata}>{children}</GymContext.Provider>
+    );
+};
 
-// export default GymProvider;
+export default GymProvider;
