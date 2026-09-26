@@ -13,7 +13,7 @@ const Savebutton = ({ gym }: { gym: IGym }) => {
   const handleAddSave = () => {
     // Check duplicate workout
     const alreadySaved = saveGym.some(
-      (item) => item.id === gym.id
+      (item: IGym) => item.id === gym.id
     );
 
     if (alreadySaved) {

@@ -28,17 +28,7 @@ const GymDetails = async ({ params }: GymDetailsProps) => {
 
   const gymData = await getGyms();
 
-  const gym = gymData.find((item: IGym) => item.id === Number(id));
-
-  // if (!gym) {
-  //   return (
-  //     <div className="flex min-h-screen items-center justify-center bg-[#090a0c]">
-  //       <h1 className="text-lg font-bold text-white">
-  //         Workout not found
-  //       </h1>
-  //     </div>
-  //   );
-  // }
+  const gym = gymData.find((item: IGym) => item.id === Number(id)) as IGym;
 
   return (
     <div className="min-h-screen bg-[#090a0c] px-4 py-7">

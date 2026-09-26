@@ -46,19 +46,27 @@ const Navbar = () => {
           </Link>
         </nav>
 
-        <div className="hidden items-center gap-1 sm:gap-2 md:flex">
+        <div className="hidden items-center gap-8 md:flex">
           <Link
             href="/myplain"
-            className="flex h-[28px] items-center rounded-[7px] bg-[#ccff00] px-2 text-[7px] font-black tracking-[0.08em] text-black transition hover:bg-[#f1f3eb] sm:h-[34px] sm:rounded-[8px] sm:px-3 sm:text-[10px] sm:tracking-[0.12em]"
+            className="flex items-center gap-3 text-[16px] font-medium text-[#d4d4d8] transition hover:text-white"
           >
-            PLAN ({addPlain.length})
+            <span>Plan</span>
+
+            <span className="flex h-[25px] w-[30px] items-center justify-center rounded-full bg-[#ccff00] text-[14px] font-bold text-black">
+              {addPlain.length}
+            </span>
           </Link>
 
           <Link
             href="/myplain"
-            className="flex h-[28px] items-center rounded-[7px] border border-[#3f3f46] px-2 text-[7px] font-black tracking-[0.08em] text-white transition hover:border-[#dfe1e9] sm:h-[34px] sm:rounded-[8px] sm:px-3 sm:text-[10px] sm:tracking-[0.12em]"
+            className="flex items-center gap-3 text-[16px] font-medium text-[#a1a1aa] transition hover:text-white"
           >
-            SAVED ({saveGym.length})
+            <span>Saved</span>
+
+            <span className="flex h-[25px] w-[30px] items-center justify-center rounded-full border border-[#292d35] text-[14px] font-medium text-[#d4d4d8]">
+              {saveGym.length}
+            </span>
           </Link>
         </div>
 

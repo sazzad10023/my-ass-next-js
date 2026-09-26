@@ -13,7 +13,7 @@ const Addbutton = ({ gym }: { gym: IGym }) => {
   const handleGym = () => {
     // Check duplicate workout
     const alreadyAdded = addPlain.some(
-      (item) => item.id === gym.id
+      (item: IGym) => item.id === gym.id
     );
 
     if (alreadyAdded) {
@@ -40,7 +40,7 @@ const Addbutton = ({ gym }: { gym: IGym }) => {
     >
       <PiCalendarPlusLight className="shrink-0 text-[14px]" />
 
-      <span>Add to today's plan</span>
+      <span>Add to today&apos;s plan</span>
     </button>
   );
 };

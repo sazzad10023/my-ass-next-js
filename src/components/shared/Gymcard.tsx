@@ -22,7 +22,7 @@ const Gymcard = ({ gym }: IgymProps) => {
           />
         </div>
 
-        {/* Card Content */}
+        
         <div className="px-4 pb-4 pt-3">
           {/* Muscle Groups */}
           <div className="mb-2.5 flex min-h-[20px] flex-wrap items-center gap-[5px]">
@@ -36,20 +36,20 @@ const Gymcard = ({ gym }: IgymProps) => {
             ))}
           </div>
 
-          {/* Workout Name */}
+         
           <h2 className="truncate text-[14px] font-black uppercase leading-[1.25] tracking-[0.01em] text-white">
             {gym.name}
           </h2>
 
-          {/* Equipment */}
+         
           <p className="mt-1 truncate text-[10px] font-medium leading-none text-[#686b72]">
             {gym.equipment}
           </p>
 
-          {/* Divider */}
+         
           <div className="my-3.5 h-px bg-[#24272d]" />
 
-          {/* Stats */}
+          
           <div className="flex items-center gap-4 text-[14px] font-medium leading-none text-[#777b83]">
             <span className="whitespace-nowrap">
               ◷ {gym.duration} min

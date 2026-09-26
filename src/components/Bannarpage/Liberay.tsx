@@ -18,9 +18,9 @@ const Liberay = async () => {
 
   return (
     <div className="min-h-screen bg-[#090a0c] px-4 py-6">
-      
+
       <div className="container mx-auto w-full max-w-[1240px]">
-        
+
         <div className="mb-5">
           <h1 className="text-[30px] font-extrabold uppercase leading-none tracking-tight text-white">
             THE LIBRARY
@@ -32,10 +32,10 @@ const Liberay = async () => {
         </div>
 
         <div className="grid h-367 grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {libData.map((gym:IGym,ind:number) => {
-            return <Gymcard key={ind} gym={gym}/>
+          {libData.map((gym: IGym, ind: number) => {
+            return <Gymcard key={ind} gym={gym} />
           }
-           
+
           )}
         </div>
       </div>

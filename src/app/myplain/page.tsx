@@ -2,16 +2,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, {useContext,useState,} from "react";
-import {FiCheck,FiChevronDown,FiClock,FiStar, FiX,} from "react-icons/fi";
+import React, { useContext, useState } from "react";
+import { FiCheck, FiChevronDown, FiClock, FiStar, FiX, } from "react-icons/fi";
 import { IoFlameOutline } from "react-icons/io5";
 import { toast } from "react-toastify";
 
 import { GymContext } from "@/context/GymContext";
 import { IGym } from "@/types/gym.types";
 
-type SortType =| "duration"| "calories"| "rating";
-type TabType =| "today"| "saved";
+type SortType = | "duration" | "calories" | "rating";
+type TabType = | "today" | "saved";
 
 const Myplain = () => {
   const {
@@ -20,43 +20,43 @@ const Myplain = () => {
     saveGym,
     setsaveGym,
   } = useContext(GymContext);
-  const [activeTab, setActiveTab] =useState<TabType>("today");
+  const [activeTab, setActiveTab] = useState<TabType>("today");
   const [sortBy, setSortBy] = useState<SortType>("duration");
-  const [completedIds, setCompletedIds] =useState<number[]>([]);
+  const [completedIds, setCompletedIds] = useState<number[]>([]);
   const sortedPlan = [...addPlain];
   if (sortBy === "duration") {
     sortedPlan.sort((a, b) =>
-        a.duration - b.duration
+      a.duration - b.duration
     );
   }
 
-  if (sortBy === "calories")
-    {sortedPlan.sort((a, b) =>
-        a.caloriesBurned -b.caloriesBurned
+  if (sortBy === "calories") {
+    sortedPlan.sort((a, b) =>
+      a.caloriesBurned - b.caloriesBurned
     );
   }
 
   if (sortBy === "rating") {
     sortedPlan.sort((a, b) =>
-        b.rating - a.rating
+      b.rating - a.rating
     );
   }
   const sortedSaved = [...saveGym];
   if (sortBy === "duration") {
     sortedSaved.sort((a, b) =>
-        a.duration - b.duration
+      a.duration - b.duration
     );
   }
 
   if (sortBy === "calories") {
     sortedSaved.sort((a, b) =>
-        a.caloriesBurned -b.caloriesBurned
+      a.caloriesBurned - b.caloriesBurned
     );
   }
 
   if (sortBy === "rating") {
     sortedSaved.sort((a, b) =>
-        b.rating - a.rating
+      b.rating - a.rating
     );
   }
   let currentWorkouts = sortedPlan;
@@ -64,8 +64,7 @@ const Myplain = () => {
   if (activeTab === "saved") {
     currentWorkouts = sortedSaved;
   }
-  let totalExercises =
-    currentWorkouts.length;
+  const totalExercises = currentWorkouts.length;
 
   let totalMinutes = 0;
   let totalCalories = 0;
@@ -96,14 +95,14 @@ const Myplain = () => {
     const newPlan = addPlain.filter(
       (item) => item.id !== gym.id
     );
- setaddPlain(newPlan);
+    setaddPlain(newPlan);
 
-    const newCompletedIds =completedIds.filter(
-        (id) => id !== gym.id
-      );
+    const newCompletedIds = completedIds.filter(
+      (id) => id !== gym.id
+    );
 
-    setCompletedIds( newCompletedIds);
-toast.success(
+    setCompletedIds(newCompletedIds);
+    toast.success(
       `${gym.name} removed from today's plan.`
     );
   };
@@ -116,7 +115,7 @@ toast.success(
       `${gym.name} removed from saved workouts.`
     );
   };
-  const handleMarkAsDone = ( gym: IGym) => {
+  const handleMarkAsDone = (gym: IGym) => {
     if (
       completedIds.includes(gym.id)
     ) {
@@ -126,15 +125,15 @@ toast.success(
       return;
     }
 
-    const newCompletedIds = [ ...completedIds, gym.id,
+    const newCompletedIds = [...completedIds, gym.id,
     ];
-    setCompletedIds( newCompletedIds);
+    setCompletedIds(newCompletedIds);
     toast.success(
       `${gym.name} marked as done.`
     );
   };
 
-  const PlanCard = ({gym,saved = false,}: { gym: IGym;saved?: boolean;}) => {
+  const PlanCard = ({ gym, saved = false, }: { gym: IGym; saved?: boolean; }) => {
     let isCompleted = false;
     if (
       completedIds.includes(gym.id)
@@ -144,11 +143,10 @@ toast.success(
 
     return (
       <div
-        className={`border border-[#24272d] bg-[#15171c] transition-colors hover:border-[#353940] ${
-          isCompleted
+        className={`border border-[#24272d] bg-[#15171c] transition-colors hover:border-[#353940] ${isCompleted
             ? "border-[#354000]"
             : ""
-        }`}
+          }`}
       >
         <div className="  flex flex-col gap-4 px-3.5 py-3 sm:flex-row sm:items-center">
           <div className="h-[90px] w-full shrink-0 overflow-hidden rounded-[7px] sm:w-[132px]">
@@ -162,7 +160,7 @@ toast.success(
           </div>
           <div className="min-w-0 flex-1">
             <h2
-              className={`truncate text-[14px] font-black uppercase leading-[1.2] ${isCompleted? "text-[#9ca86c]": "text-white"}`}>
+              className={`truncate text-[14px] font-black uppercase leading-[1.2] ${isCompleted ? "text-[#9ca86c]" : "text-white"}`}>
               {gym.name}
             </h2>
             <p className="mt-1 truncate text-[9px] font-medium text-[#686b72]">
@@ -187,18 +185,17 @@ toast.success(
           </div>
           <div className="flex shrink-0 items-center gap-2">
             <Link
-              href={`/workout/${gym.id}`}className="flex h-[32px] items-center justify-center rounded-full border border-[#30333a] px-4 text-[9px] font-medium text-white transition hover:border-[#50545c] hover:bg-[#1b1e24]">
+              href={`/workout/${gym.id}`} className="flex h-[32px] items-center justify-center rounded-full border border-[#30333a] px-4 text-[9px] font-medium text-white transition hover:border-[#50545c] hover:bg-[#1b1e24]">
               View Details
             </Link>
             {!saved && (
-              <button onClick={() =>handleMarkAsDone(gym)
-                }
+              <button onClick={() => handleMarkAsDone(gym)
+              }
                 disabled={isCompleted}
-                className={`flex h-[32px] items-center gap-1.5 rounded-full px-4 text-[9px] font-bold transition ${
-                  isCompleted
+                className={`flex h-[32px] items-center gap-1.5 rounded-full px-4 text-[9px] font-bold transition ${isCompleted
                     ? "cursor-default bg-[#354000] text-[#c8ff00]"
                     : "cursor-pointer bg-[#c8ff00] text-[#090a0c] hover:bg-[#b8ee00]"
-                }`}>
+                  }`}>
                 <FiCheck className="text-[12px]" />
                 {isCompleted
                   ? "Done"
@@ -206,12 +203,13 @@ toast.success(
               </button>
             )}
             <button onClick={() => {
-                if (saved) {
-                  handleRemoveSaved(gym);} 
-                  else {
-                  handleRemovePlan(gym );
-                }
-              }}
+              if (saved) {
+                handleRemoveSaved(gym);
+              }
+              else {
+                handleRemovePlan(gym);
+              }
+            }}
               aria-label={`Remove ${gym.name}`}
               className="flex h-[30px] w-[30px] cursor-pointer items-center justify-center text-[#686b72] transition hover:text-white">
               <FiX className="text-[14px]" />
@@ -280,10 +278,10 @@ toast.success(
 
           <div className="tabs tabs-box w-fit bg-transparent">
 
-            <button onClick={() => setActiveTab("today")}className={`tab ${activeTab === "today"? "tab-active": ""}` }>
-              Today's Plan
+            <button onClick={() => setActiveTab("today")} className={`tab ${activeTab === "today" ? "tab-active" : ""}`}>
+              Today &apos;s Plan
             </button>
-            <button onClick={() =>setActiveTab("saved")}className={`tab ${activeTab === "saved" ? "tab-active": ""}`}>
+            <button onClick={() => setActiveTab("saved")} className={`tab ${activeTab === "saved" ? "tab-active" : ""}`}>
               Saved
             </button>
           </div>
@@ -313,19 +311,19 @@ toast.success(
               >
 
                 <li>
-                  <button onClick={() =>handleSortChange("duration")}>
+                  <button onClick={() => handleSortChange("duration")}>
                     Duration
                   </button>
                 </li>
 
                 <li>
-                  <button onClick={() =>handleSortChange("calories"  ) }>
+                  <button onClick={() => handleSortChange("calories")}>
                     Calories
                   </button>
                 </li>
 
                 <li>
-                  <button onClick={() =>handleSortChange("rating" )}>
+                  <button onClick={() => handleSortChange("rating")}>
                     Rating
                   </button>
                 </li>
@@ -335,42 +333,42 @@ toast.success(
             </div>
           </div>
         </div>
-        {activeTab === "today" && (<div className="space-y-3">{sortedPlan.length > 0 &&sortedPlan.map(
-                (gym: IGym) => ( <PlanCard key={gym.id}gym={gym}/>)
-              )}
+        {activeTab === "today" && (<div className="space-y-3">{sortedPlan.length > 0 && sortedPlan.map(
+          (gym: IGym) => (<PlanCard key={gym.id} gym={gym} />)
+        )}
 
-            {sortedPlan.length === 0 && (
-              <div className="flex min-h-[220px] items-center justify-center border border-[#24272d] bg-[#0f1014] px-5 py-[30px] text-center">
+          {sortedPlan.length === 0 && (
+            <div className="flex min-h-[220px] items-center justify-center border border-[#24272d] bg-[#0f1014] px-5 py-[30px] text-center">
 
-                <div>
+              <div>
 
-                  <h2 className="text-[18px] font-black tracking-tight text-white">
-                    NOTHING HERE YET
-                  </h2>
+                <h2 className="text-[18px] font-black tracking-tight text-white">
+                  NOTHING HERE YET
+                </h2>
 
-                  <p className="mt-1.5 text-[11px] text-[#858991]">
-                    Browse the library and add a lift to get today moving.
-                  </p>
+                <p className="mt-1.5 text-[11px] text-[#858991]">
+                  Browse the library and add a lift to get today moving.
+                </p>
 
-                  <Link
-                    href="/"
-                    className="mt-5 inline-flex items-center rounded-[6px] bg-[#c8ff00] px-4 py-2.5 text-[9px] font-black uppercase text-[#090a0c] transition hover:bg-[#b8ee00]"
-                  >
-                    Go to workouts
-                  </Link>
-
-                </div>
+                <Link
+                  href="/"
+                  className="mt-5 inline-flex items-center rounded-[6px] bg-[#c8ff00] px-4 py-2.5 text-[9px] font-black uppercase text-[#090a0c] transition hover:bg-[#b8ee00]"
+                >
+                  Go to workouts
+                </Link>
 
               </div>
-            )}
 
-          </div>
+            </div>
+          )}
+
+        </div>
         )}
         {activeTab === "saved" && (
           <div className="space-y-3">
 
-            {sortedSaved.length > 0 && sortedSaved.map( (gym: IGym) => ( <PlanCard key={gym.id} gym={gym} saved/>)
-              )}
+            {sortedSaved.length > 0 && sortedSaved.map((gym: IGym) => (<PlanCard key={gym.id} gym={gym} saved />)
+            )}
 
             {sortedSaved.length === 0 && (
               <div className="flex min-h-[220px] items-center justify-center border border-[#24272d] bg-[#0f1014] px-5 py-[30px] text-center">
