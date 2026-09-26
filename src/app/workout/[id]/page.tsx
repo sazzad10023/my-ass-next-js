@@ -4,6 +4,7 @@ import { IGym } from "@/types/gym.types";
 
 import Addbutton from "@/components/gymdetailspage/Addbutton";
 import Savebutton from "@/components/gymdetailspage/Savebutton";
+import NotFound from "@/app/not-found";
 
 interface GymDetailsProps {
   params: Promise<{
@@ -29,6 +30,10 @@ const GymDetails = async ({ params }: GymDetailsProps) => {
   const gymData = await getGyms();
 
   const gym = gymData.find((item: IGym) => item.id === Number(id)) as IGym;
+
+if (!gym) {
+  NotFound();
+}
 
   return (
     <div className="min-h-screen bg-[#090a0c] px-4 py-7">

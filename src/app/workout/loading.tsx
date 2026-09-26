@@ -1,6 +1,6 @@
 import React from "react";
 
-const GlobelLoading = () => {
+const Loading = () => {
   return (
     <div className="animate-pulse text-[#c8ff00]">
       Loading page .....
@@ -8,4 +8,4 @@ const GlobelLoading = () => {
   );
 };
 
-export default GlobelLoading;
+export default Loading;
