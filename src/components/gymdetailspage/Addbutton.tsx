@@ -11,7 +11,7 @@ const Addbutton = ({ gym }: { gym: IGym }) => {
   const { addPlain, setaddPlain } = useContext(GymContext);
 
   const handleGym = () => {
-    // Check duplicate workout
+
     const alreadyAdded = addPlain.some(
       (item: IGym) => item.id === gym.id
     );
@@ -24,10 +24,8 @@ const Addbutton = ({ gym }: { gym: IGym }) => {
       return;
     }
 
-    // Add workout
     setaddPlain([...addPlain, gym]);
 
-    // Success toast
     toast.success(
       ` ${gym.name} added to  Today’s Plan.`
     );

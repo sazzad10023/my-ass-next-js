@@ -28,7 +28,7 @@ const Bannar = () => {
           <div className="mt-6">
             <Link
               href="#library"
-              className="inline-flex items-center bg-[#ccff00] px-4 py-2.5 text-[9px] font-black uppercase tracking-[0.08em] text-black transition-colors hover:bg-[#d9ff4d]"
+              className="inline-flex items-center broder rounded-[3px] bg-[#ccff00] px-4 py-2.5 text-[9px] font-black uppercase tracking-[0.08em] text-black transition-colors hover:bg-[#d9ff4d]"
             >
               Browse Workouts
             </Link>
