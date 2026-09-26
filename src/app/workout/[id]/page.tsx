@@ -32,7 +32,7 @@ const GymDetails = async ({ params }: GymDetailsProps) => {
   const gym = gymData.find((item: IGym) => item.id === Number(id)) as IGym;
 
 if (!gym) {
-  NotFound();
+  return <NotFound />;
 }
 
   return (
