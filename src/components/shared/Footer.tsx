@@ -4,8 +4,8 @@
 
 // const Footer = () => {
 //   return (
-//     <footer className="mt-auto bg-[#0f1014] px-6 py-5">
-//       <div className="contaniner mx-auto flex max-w-[1250px] items-center justify-between">
+//     <footer className="mt-auto bg-[#0f1014] px-4 py-5 sm:px-6">
+//       <div className="contaniner mx-auto flex max-w-[1250px] flex-col items-center justify-between gap-3 sm:flex-row">
 //         <div className="flex items-center">
 //           <Image
 //             src={logo}
@@ -20,7 +20,7 @@
 //           </span>
 //         </div>
 
-//         <p className="text-[12px] text-[#686b72]">
+//         <p className="text-center text-[10px] text-[#686b72] sm:text-right sm:text-[12px]">
 //           © 2026 FitLog — Workout Library. Train hard, log honest.
 //         </p>
 //       </div>
