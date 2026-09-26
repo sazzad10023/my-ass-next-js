@@ -23,11 +23,8 @@ const Savebutton = ({ gym }: { gym: IGym }) => {
 
       return;
     }
-
-    // Save workout
     setsaveGym([...saveGym, gym]);
 
-    // Success toast
     toast.success(
       ` ${gym.name} is added  to  saved .`
     );
